@@ -352,8 +352,7 @@
 				</div>
 				
 				<div class="col-sm-9 padding-right">
-				@yield('content')
-							
+					@yield('content')	
 				</div>
 			</div>
 		</div>

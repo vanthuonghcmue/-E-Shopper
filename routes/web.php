@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Homecontroller;
+use App\Http\Controllers\AdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -12,10 +14,12 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+// fontend
+Route::get('/', [Homecontroller::class, 'index']);
+Route::get('/trang-chu',[Homecontroller::class, 'index']);
 
-Route::get('/', function () {
-    return view('welcome');
-});
-Route::get('/trang-chu', function () {
-    return view('welcome');
-});
+// backends
+Route::get('/admin',[AdminController::class, 'index']);
+Route::get('/dashboard',[AdminController::class, 'show_dashboard']);
+Route::post('/admin-dashboard',[AdminController::class, 'dashboard']);
+Route::get('/logout',[AdminController::class, 'logout']);
